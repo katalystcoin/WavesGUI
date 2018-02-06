@@ -25,6 +25,10 @@
 
         ctrl.wallets = [
             {
+                balance: new Money(0, currencyKat),
+                depositWith: currencyKat
+            },
+            {
                 balance: new Money(0, Currency.USD),
                 depositWith: Currency.USD
             },
@@ -55,10 +59,6 @@
             {
                 balance: new Money(0, Currency.WTRY),
                 depositWith: Currency.WTRY
-            },
-            {
-                balance: new Money(0, currencyKat),
-                depositWith: currencyKat
             }
         ];
 
