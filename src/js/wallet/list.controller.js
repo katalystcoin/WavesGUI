@@ -2,7 +2,7 @@
     'use strict';
 
     function WavesWalletListController($scope, $interval, events, applicationContext,
-                                       apiService, transactionLoadingService, dialogService) {
+                                       apiService, transactionLoadingService, dialogService, currencyKat) {
         var ctrl = this;
         var refreshPromise;
         var refreshDelay = 10 * 1000;
@@ -55,6 +55,10 @@
             {
                 balance: new Money(0, Currency.WTRY),
                 depositWith: Currency.WTRY
+            },
+            {
+                balance: new Money(0, currencyKat),
+                depositWith: currencyKat
             }
         ];
 
@@ -185,7 +189,7 @@
     }
 
     WavesWalletListController.$inject = ['$scope', '$interval', 'wallet.events', 'applicationContext',
-                                         'apiService', 'transactionLoadingService', 'dialogService'];
+                                         'apiService', 'transactionLoadingService', 'dialogService', 'currency.KAT'];
 
     angular
         .module('app.wallet')

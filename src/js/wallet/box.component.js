@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    function WalletBoxController() {
+    function WalletBoxController(currencyKat) {
         var ctrl = this;
 
         var mapping = {};
@@ -37,6 +37,10 @@
             image: 'wB-bg-WTRY.png',
             displayName: Currency.WTRY.displayName
         };
+        mapping[currencyKat.displayName] = {
+            image: 'wB-bg-KAT.svg',
+            displayName: currencyKat.displayName
+        };
 
         ctrl.$onChanges = function (changesObject) {
             if (changesObject.balance) {
@@ -51,7 +55,7 @@
         };
     }
 
-    WalletBoxController.$inject = [];
+    WalletBoxController.$inject = ['currency.KAT'];
 
     angular
         .module('app.wallet')
