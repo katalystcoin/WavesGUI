@@ -5,7 +5,7 @@
         HISTORY_LIMIT = 50;
 
     function DexController($scope, $interval, applicationContext, assetStoreFactory, datafeedApiService,
-                           dexOrderService, dexOrderbookService, notificationService, utilsService, dialogService) {
+                           dexOrderService, dexOrderbookService, notificationService, utilsService, dialogService, currencyKat) {
 
         var ctrl = this,
             intervalPromise,
@@ -35,20 +35,11 @@
             { amountAsset: Currency.ETH, priceAsset: Currency.WAVES },
             { amountAsset: Currency.ETH, priceAsset: Currency.BTC },
             { amountAsset: Currency.ETH, priceAsset: Currency.USD },
-            { amountAsset: Currency.WCT, priceAsset: Currency.WAVES },
-            { amountAsset: Currency.WCT, priceAsset: Currency.BTC },
+            { amountAsset: currencyKat, priceAsset: Currency.WAVES },
             { amountAsset: Currency.MRT, priceAsset: Currency.WAVES },
             { amountAsset: Currency.MRT, priceAsset: Currency.BTC },
             { amountAsset: Currency.EUR, priceAsset: Currency.USD }
         ];
-
-        // TODO : change after Dec 11, 2017
-        if (Date.now() >= 1512993600000) {
-            favoritePairs.push({
-                amountAsset: Currency.WAVES,
-                priceAsset: Currency.WTRY
-            });
-        }
 
         ctrl.favoritePairs = favoritePairs;
 
@@ -288,7 +279,7 @@
     }
 
     DexController.$inject = ['$scope', '$interval', 'applicationContext', 'assetStoreFactory', 'datafeedApiService',
-        'dexOrderService', 'dexOrderbookService', 'notificationService', 'utilsService', 'dialogService'];
+        'dexOrderService', 'dexOrderbookService', 'notificationService', 'utilsService', 'dialogService', 'currency.KAT'];
 
     angular
         .module('app.dex')
