@@ -5,7 +5,8 @@
         HISTORY_LIMIT = 50;
 
     function DexController($scope, $interval, applicationContext, assetStoreFactory, datafeedApiService,
-                           dexOrderService, dexOrderbookService, notificationService, utilsService, dialogService, currencyKat) {
+                           dexOrderService, dexOrderbookService, notificationService, utilsService, dialogService,
+                           currencyKat) {
 
         var ctrl = this,
             intervalPromise,
@@ -279,7 +280,8 @@
     }
 
     DexController.$inject = ['$scope', '$interval', 'applicationContext', 'assetStoreFactory', 'datafeedApiService',
-        'dexOrderService', 'dexOrderbookService', 'notificationService', 'utilsService', 'dialogService', 'currency.KAT'];
+        'dexOrderService', 'dexOrderbookService', 'notificationService', 'utilsService', 'dialogService',
+        'currency.KAT'];
 
     angular
         .module('app.dex')
