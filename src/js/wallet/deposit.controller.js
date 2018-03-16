@@ -13,7 +13,7 @@
             bitcoinAddress: '',
             bitcoinAmount: '',
             bitcoinUri: '',
-            minimumAmount: 0.01
+            minimumAmount: 0.001
         };
 
         ctrl.eth = {

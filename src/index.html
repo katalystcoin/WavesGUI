@@ -43,6 +43,14 @@
 
 <!-- LOG IN AREA -->
 <div id="lockscreen" class="userBG" ng-controller="accountsController as accounts" ng-switch-when="accounts-screen" ng-cloak>
+  <div class="banner">
+    <div class="banner-content">
+      <img src="img/warning_icon.svg"/> Google is shutting down its Chrome Web Store.
+      Save your secret phrase (SEED) and start using our new desktop application.
+      Download it from the official Waves site <a href="https://wavesplatform.com" target="_blank">wavesplatform.com</a>,
+      or use the web client <a href="https://beta.wavesplatform.com" target="_blank">beta.wavesplatform.com</a>
+    </div>
+  </div>
   <table id="lockscreenTable">
 
     <thead>
@@ -243,7 +251,7 @@
     <span id="version" class="centerIt">
                 <span>Address:</span>
                 <span id="wavesAccountAddress" class="clipSpan" tooltipster tooltip-theme="tooltipster-theme3" title="Copy the address to clipboard." ngclipboard data-clipboard-text="{{::menu.address}}" ngclipboard-success="clipboardOk()">{{::menu.address}}</span>
-                <span id="wavesAccountAddressQr" ng-click="menu.showAddressQr()">QR</span>
+                <span id="wavesAccountAddressQr" ng-click="menu.showAddressQr()">your address (QR)</span>
                 <span class="divider-2"></span>
                 <span class="inlineParagraph">Block:</span> <span id="blockheight">{{menu.blockHeight}}</span>
             </span>
@@ -484,6 +492,7 @@
           <div class="noDisp" ng-controller="walletWithdrawController as withdraw" data-type="crypto">
             <div id="withdraw-crypto-dialog" waves-dialog ok-button-caption="WITHDRAW" on-dialog-ok="withdraw.confirmWithdraw(withdraw.assetForm)">
               <h2 class="sectionHeader">WITHDRAW: {{withdraw.sourceCurrency}}</h2>
+              <p class="dialog-text">The minimum withdrawal amount is <span class="fontBold">{{withdraw.minimumPayment | moneyLong:true}}</span></p>
               <p class="dialog-text" ng-if="withdraw.isEthereum">Do not withdraw ETH to smart contract addresses!<br/>Your transaction may fail if their execution require additional fees.</p>
               <form id="withdraw-asset-form" name="withdraw.assetForm" novalidate ng-validate="withdraw.validationOptions">
                 <table class="form-table">
@@ -554,9 +563,9 @@
                 <br/>
                 Fees are 1% from the amount transferred<br/>
                 <br/>
-                The minimum amount is 100 {{withdraw.sourceCurrency}}<br/>
+                The minimum amount is 500 {{withdraw.sourceCurrency}}<br/>
                 <br/>
-                Bank transfer can take up to 3 working days
+                <a href="https://coinomat.com/faq.php" target="_blank">More information about withdrawals</a>
               </p>
               <br/>
               <p class="dialog-text textCenter">
