@@ -2,6 +2,13 @@
     'use strict';
 
     // TODO : move to the future `appState` service.
+    var currencyKAT = Currency.create({
+        id: 'DSakmDaduNHXgAXKP4LM7358yZYduWg9VGALA9auDck8',
+        displayName: 'Katalyst',
+        shortName: 'KAT',
+        precision: 8,
+        verified: false
+    });
 
     var predefinedAssets = [
         Currency.BTC,
@@ -9,11 +16,13 @@
         Currency.EUR,
         Currency.CNY,
         Currency.WCT,
-        Currency.MRT
+        Currency.MRT,
+        currencyKAT
     ];
 
     angular
         .module('app.shared')
+        .constant('currency.KAT', currencyKAT)
         .factory('assetStoreFactory', [
             '$q', 'apiService', 'matcherApiService', function ($q, apiService, matcherApiService) {
                 function AssetStore(address) {
