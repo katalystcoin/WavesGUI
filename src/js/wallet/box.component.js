@@ -33,9 +33,13 @@
             image: 'wB-bg-ZEC.svg',
             displayName: Currency.ZEC.displayName
         };
-        mapping[Currency.WTRY.displayName] = {
+        mapping[Currency.TRY.displayName] = {
             image: 'wB-bg-WTRY.png',
-            displayName: Currency.WTRY.displayName
+            displayName: Currency.TRY.displayName
+        };
+        mapping[Currency.BCH.displayName] = {
+            image: 'wB-bg-BCH.svg',
+            displayName: 'BCH'
         };
         mapping[currencyKat.displayName] = {
             image: 'wB-bg-KAT.svg',
