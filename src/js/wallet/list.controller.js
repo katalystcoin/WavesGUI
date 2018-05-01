@@ -9,7 +9,7 @@
 
         function sendCommandEvent(event, currency) {
             var assetWallet = findWalletByCurrency(currency);
-            var wavesWallet = findWalletByCurrency(Currency.WAVES);
+            var wavesWallet = findWalletByCurrency(Currency.KDEX);
 
             $scope.$broadcast(event, {
                 assetBalance: assetWallet.balance,
@@ -25,41 +25,10 @@
 
         ctrl.wallets = [
             {
-                balance: new Money(0, Currency.USD),
-                depositWith: Currency.USD
-            },
-            {
-                balance: new Money(0, Currency.EUR),
-                depositWith: Currency.EUR
-            },
-            {
-                balance: new Money(0, Currency.BTC),
-                depositWith: Currency.BTC
-            },
-            {
-                balance: new Money(0, Currency.WAVES),
-                depositWith: Currency.BTC
-            },
-            {
-                balance: new Money(0, Currency.ETH),
-                depositWith: Currency.ETH
-            },
-            {
-                balance: new Money(0, Currency.LTC),
-                depositWith: Currency.LTC
-            },
-            {
-                balance: new Money(0, Currency.ZEC),
-                depositWith: Currency.ZEC
-            },
-            {
-                balance: new Money(0, Currency.TRY),
-                depositWith: Currency.TRY
-            },
-            {
-                balance: new Money(0, Currency.BCH),
-                depositWith: Currency.BCH
+                balance: new Money(0, Currency.KDEX),
+                depositWith: Currency.KDEX
             }
+
         ];
 
         ctrl.transactions = [];
@@ -86,27 +55,27 @@
             var id = wallet.balance.currency.id,
                 type;
 
-            if (id === Currency.BTC.id ||
-                id === Currency.ETH.id ||
-                id === Currency.WAVES.id ||
-                id === Currency.LTC.id ||
-                id === Currency.ZEC.id ||
-                id === Currency.BCH.id
-            ) {
-                type = 'crypto';
-            } else if (id === Currency.EUR.id || id === Currency.USD.id) {
-                type = 'fiat';
-            } else if (id === Currency.TRY.id) {
-                dialogService.open('#digilira-dialog');
-            } else {
-                throw new Error('Add an option here!');
-            }
+            // if (id === Currency.BTC.id ||
+            //     id === Currency.ETH.id ||
+            //     id === Currency.KDEX.id ||
+            //     id === Currency.LTC.id ||
+            //     id === Currency.ZEC.id ||
+            //     id === Currency.BCH.id
+            // ) {
+            //     type = 'crypto';
+            // } else if (id === Currency.EUR.id || id === Currency.USD.id) {
+            //     type = 'fiat';
+            // } else if (id === Currency.TRY.id) {
+            //     dialogService.open('#digilira-dialog');
+            // } else {
+            //     throw new Error('Add an option here!');
+            // }
 
             sendCommandEvent(events.WALLET_WITHDRAW + type, wallet.balance.currency);
         }
 
         function deposit (wallet) {
-            if (wallet.balance.currency === Currency.WAVES) {
+            if (wallet.balance.currency === Currency.KDEX) {
                 depositFromCard(wallet.balance.currency);
             } else if (wallet.balance.currency === Currency.TRY) {
                 dialogService.open('#digilira-dialog');
@@ -139,8 +108,8 @@
         function refreshWallets() {
             apiService.address.balance(applicationContext.account.address)
                 .then(function (response) {
-                    var wavesWallet = findWalletByCurrency(Currency.WAVES);
-                    wavesWallet.balance = Money.fromCoins(response.balance, Currency.WAVES);
+                    var wavesWallet = findWalletByCurrency(Currency.KDEX);
+                    wavesWallet.balance = Money.fromCoins(response.balance, Currency.KDEX);
                 });
 
             apiService.assets.balance(applicationContext.account.address).then(function (response) {

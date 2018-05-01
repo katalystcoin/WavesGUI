@@ -58,10 +58,10 @@ describe('Asset.Transfer.Controller', function() {
             assetBalance = Money.fromTokens(10, Currency.USD);
 
         if (!wavesBalance)
-            wavesBalance = Money.fromTokens(20, Currency.WAVES);
+            wavesBalance = Money.fromTokens(20, Currency.KDEX);
 
         var assetId;
-        if (assetBalance.currency !== Currency.WAVES) {
+        if (assetBalance.currency !== Currency.KDEX) {
             assetId = assetBalance.currency.id;
             applicationContext.cache.assets[assetId] = {
                 balance: assetBalance,
@@ -109,7 +109,7 @@ describe('Asset.Transfer.Controller', function() {
         expect(controller.confirm.amount.toTokens()).toEqual(7);
         expect(controller.confirm.amount.currency).toEqual(Currency.CNY);
         expect(controller.confirm.fee.toTokens()).toEqual(0.002);
-        expect(controller.confirm.fee.currency).toEqual(Currency.WAVES);
+        expect(controller.confirm.fee.currency).toEqual(Currency.KDEX);
         expect(controller.confirm.recipient).toEqual(address);
 
         expect(controller.broadcast.setTransaction).toHaveBeenCalled();
@@ -129,7 +129,7 @@ describe('Asset.Transfer.Controller', function() {
         expect(controller.submitTransfer(formMock)).toBe(false);
     });
 
-    it('should not create transaction if there is not enough waves for fee', function () {
+    it('should not create transaction if there is not enough KatalystDEX for fee', function () {
         initControllerAssets();
 
         spyOn(controller.autocomplete, 'getFeeAmount').and.returnValue('20.002');

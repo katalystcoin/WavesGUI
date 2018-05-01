@@ -8,15 +8,15 @@
                 fees: [
                     {
                         amount: 0.001,
-                        displayText: '0.001 WAVE (Economic)'
+                        displayText: '0.001 KDEX (Economic)'
                     },
                     {
                         amount: 0.0015,
-                        displayText: '0.0015 WAVE (Standard)'
+                        displayText: '0.0015 KDEX (Standard)'
                     },
                     {
                         amount: 0.002,
-                        displayText: '0.002 WAVE (Premium)'
+                        displayText: '0.002 KDEX (Premium)'
                     }
                 ],
                 selectedFee: undefined,

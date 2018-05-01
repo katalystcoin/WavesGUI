@@ -59,10 +59,10 @@ describe('Mass.Payment.Controller', function() {
             assetBalance = Money.fromTokens(1000, Currency.USD);
 
         if (!wavesBalance)
-            wavesBalance = Money.fromTokens(20, Currency.WAVES);
+            wavesBalance = Money.fromTokens(20, Currency.KDEX);
 
         var assetId;
-        if (assetBalance.currency !== Currency.WAVES) {
+        if (assetBalance.currency !== Currency.KDEX) {
             assetId = assetBalance.currency.id;
             applicationContext.cache.assets[assetId] = {
                 balance: assetBalance
@@ -94,7 +94,7 @@ describe('Mass.Payment.Controller', function() {
     });
 
     it('should understand that waves are being sent', function () {
-        initControllerAssets(Money.fromTokens(10, Currency.WAVES), Money.fromTokens(10, Currency.WAVES));
+        initControllerAssets(Money.fromTokens(10, Currency.KDEX), Money.fromTokens(10, Currency.KDEX));
 
         expect(controller.sendingWaves).toBe(true);
 
@@ -251,7 +251,7 @@ describe('Mass.Payment.Controller', function() {
     });
 
     it('should not confirm payment if there is not enough Waves when paying USD', function () {
-        initControllerAssets(Money.fromTokens(1000, Currency.USD), Money.fromTokens(0.00399, Currency.WAVES));
+        initControllerAssets(Money.fromTokens(1000, Currency.USD), Money.fromTokens(0.00399, Currency.KDEX));
 
         spyOn(controller.autocomplete, 'getFeeAmount').and.returnValue('0.002');
         spyOn(controller.broadcast, 'setTransaction');
@@ -276,8 +276,8 @@ describe('Mass.Payment.Controller', function() {
         expect(notificationService.error).toHaveBeenCalled();
     });
 
-    it('should not confirm payment if there is not enough Waves when paying Waves', function () {
-        var balance = Money.fromTokens(1000, Currency.WAVES);
+    it('should not confirm payment if there is not enough KatalystDEX when paying KatalystDEX', function () {
+        var balance = Money.fromTokens(1000, Currency.KDEX);
         initControllerAssets(balance, balance);
 
         spyOn(controller.autocomplete, 'getFeeAmount').and.returnValue('1');
@@ -359,7 +359,7 @@ describe('Mass.Payment.Controller', function() {
         expect(controller.confirm.amount.toTokens()).toEqual(999);
         expect(controller.confirm.amount.currency).toEqual(Currency.USD);
         expect(controller.confirm.fee.toTokens()).toEqual(0.02);
-        expect(controller.confirm.fee.currency).toEqual(Currency.WAVES);
+        expect(controller.confirm.fee.currency).toEqual(Currency.KDEX);
         expect(controller.confirm.recipients).toEqual(2);
 
         expect(controller.sendingWaves).toBe(false);

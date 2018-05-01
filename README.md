@@ -1,11 +1,11 @@
 # Client
 
-![Alt text](https://pbs.twimg.com/media/CjUjPVgVAAA60Pv.jpg "Waves Lite Client Screen")
+![Alt text](https://pbs.twimg.com/media/CjUjPVgVAAA60Pv.jpg "KatalystDEX Lite Client Screen")
 
 Ever wanted to access your crypto funds quickly but had to wait for hours while the blockchain downloads first?
-The Waves Lite Client connects to public Waves nodes to retrieve up-to-date blockchain information.
+The KatalystDEX Lite Client connects to public KatalystDEX nodes to retrieve up-to-date blockchain information.
 
-We provide all the cryptographic tools required to create addresses, sign and verify transactions for the Waves blockchain.
+We provide all the cryptographic tools required to create addresses, sign and verify transactions for the KatalystDEX blockchain.
 The Lite Client reads all the data from the public nodes, creates the transaction directly in the browser,
 and simply broadcasts it in a finished state.
 
@@ -39,7 +39,7 @@ Since you have your environment set up you can clone the repository and run in t
 ```
 npm install
 ```
-Since we are reorganizing the building process, there is something more you need to have a fully working Waves Client:
+Since we are reorganizing the building process, there is something more you need to have a fully working KatalystDEX Client:
 ```
 npm install -g grunt
 npm install grunt
@@ -51,9 +51,9 @@ Those commands will prepare all required dependencies. Now feel free to open src
 
 ## Downloadable distributions
 
-Here in the [Releases page](https://github.com/wavesplatform/WavesGUI/releases) you can find all Lite Client packages available for download.
-For mainnet Client please download *waves-lite-client-mainnet-vx.y.z.zip*.
-For testnet use *waves-lite-client-testnet-vx.y.z.zip*.
+Here in the [Releases page](https://github.com/KatalystDEXplatform/KatalystDEXGUI/releases) you can find all Lite Client packages available for download.
+For mainnet Client please download *KatalystDEX-lite-client-mainnet-vx.y.z.zip*.
+For testnet use *KatalystDEX-lite-client-testnet-vx.y.z.zip*.
 
 To run the Lite Client downloaded as a regular zip archive, follow these steps:
 1. Download and extract zip package to some directory
@@ -68,14 +68,14 @@ Otherwise, the path to the index.html will change and you won’t be able to see
 
 ## Chrome plugin
 
-Our Client has also a standalone version available in the [Chrome Web Store](https://chrome.google.com/webstore/detail/wavesliteapp/kfmcaklajknfekomaflnhkjjkcjabogm).
+Our Client has also a standalone version available in the [Chrome Web Store](https://chrome.google.com/webstore/detail/KatalystDEXliteapp/kfmcaklajknfekomaflnhkjjkcjabogm).
 This is an application for the Chrome web browser and it is available for mainnet only.
-The Chrome plugin has one major benefit: all accounts registered on one device are automatically available on your other devices on which the Waves Lite Client extension is installed.
+The Chrome plugin has one major benefit: all accounts registered on one device are automatically available on your other devices on which the KatalystDEX Lite Client extension is installed.
 This feature requires being authorized in Chrome.
 
 ## Online wallets
 
-We provide online-hosted versions of wallets for [testnet](https://testnet.waveswallet.io) and [mainnet](https://waveswallet.io).
+We provide online-hosted versions of wallets for [testnet](https://testnet.KatalystDEXwallet.io) and [mainnet](https://KatalystDEXwallet.io).
 We do not recommend using online versions of the wallets for mainnet due to security reasons.
 The safest way is to use the Chrome plugin or binaries deployed on Github, because we can work with their administrators to address potential scams.
 
@@ -88,7 +88,7 @@ All you need to do is to download the Lite Client and run it in a safe environme
 ## Can I make the Lite Client use my own node instead of the default one?
 
 Yes, but you will have to modify some javascript code. Follow these simple steps:
-1. Open the js/waves-lite-client-mainnet-vx.y.z.js in your favourite text editor
+1. Open the js/KatalystDEX-lite-client-mainnet-vx.y.z.js in your favourite text editor
 2. Search for the string AngularApplicationConfig
 3. Find where the NODE_ADDRESS is set
 4. Change the address to the address of your node. (Something like http://127.0.0.1:6869 or http://localhost:6869)

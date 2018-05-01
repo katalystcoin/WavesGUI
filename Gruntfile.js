@@ -99,9 +99,9 @@ module.exports = function (grunt) {
                     name: 'mainnet',
                     code: 'W',
                     server: 'https://nodes.wavesplatform.com',
-                    coinomat: 'https://coinomat.com',
+                    coinomat: '',
                     matcher: 'https://matcher.wavesplatform.com',
-                    datafeed: 'https://marketdata.wavesplatform.com'
+                    datafeed: ''
                 },
                 devnet: {
                     name: 'devnet',

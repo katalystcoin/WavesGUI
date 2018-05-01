@@ -6,7 +6,7 @@
     var FIRST_TRANSACTIONS_COUNT = 10;
     var LOADING_STAGE = 'loading';
     var PROCESSING_STAGE = 'processing';
-    var ZERO_MONEY = Money.fromTokens(0, Currency.WAVES);
+    var ZERO_MONEY = Money.fromTokens(0, Currency.KDEX);
 
     function ValidationError(message) {
         this.message = message;
@@ -16,7 +16,7 @@
                                          notificationService, assetService, dialogService,
                                          transactionBroadcast, apiService) {
         var mass = this;
-        var minimumFee = new Money(constants.MINIMUM_TRANSACTION_FEE, Currency.WAVES);
+        var minimumFee = new Money(constants.MINIMUM_TRANSACTION_FEE, Currency.KDEX);
         var transactions;
 
         mass.summary = {
@@ -43,7 +43,7 @@
             rules: {
                 massPayFee: {
                     required: true,
-                    decimal: Currency.WAVES.precision,
+                    decimal: Currency.KDEX.precision,
                     min: minimumFee.toTokens()
                 }
             },
@@ -75,7 +75,7 @@
                 mass.assetBalance = applicationContext.cache.assets[eventData.assetId].balance;
             }
 
-            mass.sendingWaves = mass.assetBalance.currency === Currency.WAVES;
+            mass.sendingWaves = mass.assetBalance.currency === Currency.KDEX;
 
             cleanup();
 
@@ -162,8 +162,8 @@
                 var transferCurrency = mass.assetBalance.currency;
                 var totalTransactions = 0;
                 var totalAmount = Money.fromCoins(0, transferCurrency);
-                var totalFee = Money.fromCoins(0, Currency.WAVES);
-                var fee = Money.fromTokens(mass.autocomplete.getFeeAmount(), Currency.WAVES);
+                var totalFee = Money.fromCoins(0, Currency.KDEX);
+                var fee = Money.fromTokens(mass.autocomplete.getFeeAmount(), Currency.KDEX);
                 var minimumPayment = Money.fromCoins(1, transferCurrency);
                 _.forEach(mass.inputPayments, function (transfer) {
                     if (isNaN(transfer.amount)) {
@@ -250,7 +250,7 @@
                 mass.summary.totalFee.plus(mass.summary.totalAmount);
 
             if (paymentCost.greaterThan(mass.wavesBalance)) {
-                notificationService.error('Not enough Waves to make mass payment');
+                notificationService.error('Not enough KatalystDEX to make mass payment');
 
                 return false;
             }
@@ -326,9 +326,9 @@
             mass.stage = LOADING_STAGE;
             mass.invalidPayment = false;
 
-            mass.confirm.amount = Money.fromTokens(0, Currency.WAVES);
+            mass.confirm.amount = Money.fromTokens(0, Currency.KDEX);
             mass.confirm.recipients = 0;
-            mass.confirm.fee = Money.fromTokens(0, Currency.WAVES);
+            mass.confirm.fee = Money.fromTokens(0, Currency.KDEX);
 
             mass.autocomplete.defaultFee(constants.MINIMUM_TRANSACTION_FEE);
         }

@@ -20,35 +20,16 @@
         ctrl.assetsList = [];
 
         ctrl.pair = {
-            amountAsset: Currency.WAVES,
-            priceAsset: Currency.BTC
+            // amountAsset: Currency.KDEX,
+            // priceAsset: Currency.BTC
         };
 
         emptyDataFields();
 
         var favoritePairs = [
-            { amountAsset: Currency.WAVES, priceAsset: Currency.BTC },
-            { amountAsset: Currency.WAVES, priceAsset: Currency.USD },
-            { amountAsset: Currency.WAVES, priceAsset: Currency.EUR },
-            { amountAsset: Currency.BTC, priceAsset: Currency.EUR },
-            { amountAsset: Currency.BTC, priceAsset: Currency.USD },
-            { amountAsset: Currency.ETH, priceAsset: Currency.WAVES },
-            { amountAsset: Currency.ETH, priceAsset: Currency.BTC },
-            { amountAsset: Currency.ETH, priceAsset: Currency.USD },
-            { amountAsset: Currency.WCT, priceAsset: Currency.WAVES },
-            { amountAsset: Currency.WCT, priceAsset: Currency.BTC },
-            { amountAsset: Currency.MRT, priceAsset: Currency.WAVES },
-            { amountAsset: Currency.MRT, priceAsset: Currency.BTC },
-            { amountAsset: Currency.EUR, priceAsset: Currency.USD }
+            // { amountAsset: Currency.KDEX, priceAsset: Currency.KDEX },
         ];
 
-        // TODO : change after Dec 11, 2017
-        if (Date.now() >= 1512993600000) {
-            favoritePairs.push({
-                amountAsset: Currency.WAVES,
-                priceAsset: Currency.TRY
-            });
-        }
 
         ctrl.favoritePairs = favoritePairs;
 
@@ -95,7 +76,7 @@
                     orderType: type,
                     amount: Money.fromTokens(amount, ctrl.pair.amountAsset),
                     price: OrderPrice.fromTokens(price, ctrl.pair),
-                    fee: Money.fromTokens(fee, Currency.WAVES)
+                    fee: Money.fromTokens(fee, Currency.KDEX)
                 }, sender)
                 .then(function () {
                     refreshOrderbooks();
