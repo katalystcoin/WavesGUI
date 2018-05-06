@@ -30,7 +30,6 @@
             // { amountAsset: Currency.KDEX, priceAsset: Currency.KDEX },
         ];
 
-
         ctrl.favoritePairs = favoritePairs;
 
         ctrl.createOrder = function (type, price, amount, fee, callback) {

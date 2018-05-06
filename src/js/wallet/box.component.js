@@ -6,10 +6,9 @@
 
         var mapping = {};
         mapping[Currency.KDEX.displayName] = {
-            image: 'wB-bg-WAV.svg',
+            image: 'wB-bg-KATALYST.svg',
             displayName: Currency.KDEX.displayName
         };
-
 
         ctrl.$onChanges = function (changesObject) {
             if (changesObject.balance) {

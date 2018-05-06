@@ -4,17 +4,12 @@
 <svg version="1.1" id="Laag_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 95.1 95" style="enable-background:new 0 0 95.1 95;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:url(#XMLID_2_);}
-	.st1{fill:url(#XMLID_3_);}
+	.st0{fill:#046CB4;}
+	.st1{fill:url(#XMLID_2_);}
 </style>
-<radialGradient id="XMLID_2_" cx="47.5597" cy="47.5098" r="47.5348" gradientUnits="userSpaceOnUse">
-	<stop  offset="0" style="stop-color:#1FA0DB;stop-opacity:0.5"/>
-	<stop  offset="0.5961" style="stop-color:#0D88CA;stop-opacity:0.5"/>
-	<stop  offset="1" style="stop-color:#0B77BD;stop-opacity:0.5"/>
-</radialGradient>
-<path id="XMLID_4_" class="st0" d="M47.5,2.2c25,0,45.3,20.3,45.3,45.3S72.5,92.8,47.5,92.8S2.2,72.5,2.2,47.5S22.5,2.2,47.5,2.2
+<path id="XMLID_4_" class="st0" d="M47.6,2.2c25,0,45.3,20.3,45.3,45.3S72.6,92.8,47.6,92.8S2.2,72.5,2.2,47.5S22.5,2.2,47.6,2.2
 	 M47.6,0C21.3,0,0,21.3,0,47.5S21.3,95,47.6,95s47.6-21.3,47.6-47.5S73.8,0,47.6,0L47.6,0z"/>
-<linearGradient id="XMLID_3_" gradientUnits="userSpaceOnUse" x1="9.7213" y1="46.7663" x2="85.2983" y2="46.7663" gradientTransform="matrix(1 0 0 -1 0 94.2762)">
+<linearGradient id="XMLID_2_" gradientUnits="userSpaceOnUse" x1="9.7213" y1="46.7663" x2="85.2983" y2="46.7663" gradientTransform="matrix(1 0 0 -1 0 94.2762)">
 	<stop  offset="0" style="stop-color:#1FA0DB;stop-opacity:0.5"/>
 	<stop  offset="0.5961" style="stop-color:#0D88CA;stop-opacity:0.5"/>
 	<stop  offset="1" style="stop-color:#0B77BD;stop-opacity:0.5"/>
