@@ -4,7 +4,9 @@
     // TODO : move to the future `appState` service.
 
     var predefinedAssets = [
-        Currency.KDEX
+        Currency.KDEX,
+        Currency.CKR,
+        Currency.SGD
     ];
 
     angular

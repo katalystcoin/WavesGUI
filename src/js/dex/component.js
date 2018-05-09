@@ -20,14 +20,15 @@
         ctrl.assetsList = [];
 
         ctrl.pair = {
-            // amountAsset: Currency.KDEX,
-            // priceAsset: Currency.BTC
+            amountAsset: Currency.KDEX,
+            priceAsset: Currency.CKR
         };
 
         emptyDataFields();
 
         var favoritePairs = [
-            // { amountAsset: Currency.KDEX, priceAsset: Currency.KDEX },
+             { amountAsset: Currency.KDEX, priceAsset: Currency.CKR },
+            { amountAsset: Currency.KDEX, priceAsset: Currency.SGD },
         ];
 
         ctrl.favoritePairs = favoritePairs;

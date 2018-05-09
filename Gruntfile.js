@@ -100,7 +100,7 @@ module.exports = function (grunt) {
                     code: 'W',
                     server: 'https://sg.katalystcoin.com',
                     coinomat: '',
-                    matcher: 'https://matcher.wavesplatform.com',
+                    matcher: 'https://marketdata.katalystcoin.com',
                     datafeed: ''
                 },
                 devnet: {

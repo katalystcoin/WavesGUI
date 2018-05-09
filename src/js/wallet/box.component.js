@@ -9,6 +9,14 @@
             image: 'wB-bg-KATALYST.svg',
             displayName: Currency.KDEX.displayName
         };
+        mapping[Currency.CKR.displayName] = {
+            image: 'wB-bg-KATALYST.svg',
+            displayName: Currency.CKR.displayName
+        };
+        mapping[Currency.SGD.displayName] = {
+            image: 'wB-bg-KATALYST.svg',
+            displayName: Currency.SGD.displayName
+        };
 
         ctrl.$onChanges = function (changesObject) {
             if (changesObject.balance) {
