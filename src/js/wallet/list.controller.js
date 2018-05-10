@@ -27,6 +27,14 @@
             {
                 balance: new Money(0, Currency.KDEX),
                 depositWith: Currency.KDEX
+            },
+            {
+                balance: new Money(0, Currency.CKR),
+                depositWith: Currency.CKR
+            },
+            {
+                balance: new Money(0, Currency.SGD),
+                depositWith: Currency.SGD
             }
 
         ];
