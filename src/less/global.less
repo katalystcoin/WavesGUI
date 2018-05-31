@@ -232,30 +232,46 @@ body {
 }
 
 .wavesTable thead {
-  background-color: @color-navy-blue;
-  border: 0 solid @color-almost-white;
   text-align: center;
-  font-size: 1.12rem;
-  color: @color-white;
-}
+  background: @color-turquoise;
+  color: white;
 
-.wavesTable tbody tr:nth-child(odd) {
-  background-color: @color-almost-white;
-}
+  td {
+    font-size: 0.9rem;
+    font-weight: 900;
+    border-right: 2px solid @color-lightest-grey;
 
-.wavesTable tbody tr:nth-child(even) {
-  background-color: @color-white;
+    &:last-child {
+      border: 0;
+    }
+  }
 }
 
 .wavesTable td {
-  vertical-align: middle;
-  text-align: center;
-  font-size: 1.1rem;
+  vertical-align: baseline;
   padding: .5rem;
+  font-size: 1.12rem;
+
+  input[type="text"],
+  textarea {width: 100%;}
+}
+
+#mBB-portfolio .wavesTable td {
+  padding: 1rem;
 }
 
 .wavesTable tbody tr {
+  background-color: @color-white;
   transition: all .2s ease;
+
+  &:nth-child(even){
+    background: @color-almost-white;
+  }
+}
+
+#create-asset-form .wavesTable td {
+  text-align: left;
+  background-color: @color-white;
 }
 
 .wavesTable-hover tbody tr:hover {
@@ -286,6 +302,17 @@ body {
 #latestBlocksTable .clipSpan:after {
   background: url('@{img}/wIcon_clip_txOut.svg') no-repeat;
   opacity: .6;
+}
+
+
+#latestBlocksTable {
+  td {
+    border-right: 2px solid @color-lightest-grey;
+
+    &:last-child {
+      border-right: 0;
+    }
+  }
 }
 
 @-webkit-keyframes opacity_change {

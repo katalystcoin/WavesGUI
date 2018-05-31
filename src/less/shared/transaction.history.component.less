@@ -6,6 +6,7 @@ waves-transaction-history {
   .transactions-table {
     width: 100%;
     padding-bottom: 1rem;
+    position: relative;
 
     table {
       border-collapse: collapse;
@@ -17,17 +18,23 @@ waves-transaction-history {
       overflow-y: scroll;
 
       thead {
-        background-color: @color-navy-blue;
-        border: 0 solid @color-almost-white;
+        border-top: 2px solid @color-lightest-grey;
+        background: @color-turquoise;
         text-align: center;
-        font-size: 1.12rem;
-        color: @color-white;
+        font-size: 1.15rem;
+        color: white;
+        position: relative;
+
+        td {
+          font-weight: 900;
+        }
       }
 
       tbody {
         font-family: @font-lekton;
 
         tr {
+          background-color: @color-white;
           transition: all .2s ease;
 
           &.tx-in {
@@ -42,21 +49,18 @@ waves-transaction-history {
             animation: opacity_change 1s infinite alternate ease-in-out;
           }
         }
-
-        tr:nth-child(odd) {
-          background-color: @color-almost-white;
-        }
-
-        tr:nth-child(even) {
-          background-color: @color-white;
-        }
       }
 
       td {
+        border-right: 2px solid @color-lightest-grey;
         vertical-align: middle;
         text-align: center;
-        font-size: 1.1rem;
+        font-size: 1rem;
         padding: .5rem;
+
+        &:last-child {
+          border-right: 0;
+        }
       }
     }
   }
